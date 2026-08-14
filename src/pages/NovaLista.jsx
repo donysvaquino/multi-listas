@@ -36,11 +36,17 @@ function NovaLista() {
     return setLista({ ...lista, produtos: [...lista.produtos, newProduct] });
   }
 
+  function deleteProduto(id) {
+    const newList = lista.produtos.filter((produto) => produto.id !== id);
+
+    return setLista({ ...lista, produtos: newList });
+  }
+
   return (
     <div>
       <h1>Nova lista de compras</h1>
       <AddProduto submitProduto={submitProduto} />
-      <Lista lista={lista} />
+      <Lista lista={lista} deleteProduto={deleteProduto} />
     </div>
   );
 }

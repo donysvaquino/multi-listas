@@ -1,6 +1,6 @@
-import { ChevronRightIcon, TrashIcon } from "lucide-react";
+import { TrashIcon } from "lucide-react";
 
-function Lista({ lista }) {
+function Lista({ lista, deleteProduto }) {
   return (
     <div>
       <h1>Nome da lista: {lista.name}</h1>
@@ -8,8 +8,9 @@ function Lista({ lista }) {
         {lista.produtos.map((produto) => (
           <li key={produto.id}>
             {produto.produtoNome}
+            {console.log(produto.id)}
             <button
-              onClick={() => lista.deleteProduto(produto.id)}
+              onClick={() => deleteProduto(produto.id)}
               className="bg-slate-400 p2 rounded-md text-white"
             >
               <TrashIcon />
@@ -21,4 +22,4 @@ function Lista({ lista }) {
   );
 }
 
-export default Lista;   
+export default Lista;
