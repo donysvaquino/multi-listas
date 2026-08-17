@@ -1,13 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Listas from "../components/Listas";
 
 function VerListas() {
-  const [listasCadastradas, setListasCadastradas] = useState([]);
-
-  useEffect(() => {
-    const listas = JSON.parse(localStorage.getItem("Listas")) || [];
-    setListasCadastradas(listas);
-  }, []);
+  const [listasCadastradas] = useState(() => {
+    return JSON.parse(localStorage.getItem("Listas")) || [];
+  });
 
   return (
     <div className="w-300 mx-auto">
