@@ -1,30 +1,11 @@
 import { useState } from "react";
-import Lista from "./Lista";
+import Lista from "../components/Lista";
 import AddProduto from "../components/AddProduto";
+import AddLista from "../components/AddLista";
 import { v4 } from "uuid";
 
 function NovaLista() {
-  const [lista, setLista] = useState({
-    id: 0,
-    name: "Compra do Mês",
-    produtos: [
-      {
-        id: 0,
-        produtoNome: "Banana",
-        isCompleted: false,
-      },
-      {
-        id: 1,
-        produtoNome: "Feijão",
-        isCompleted: false,
-      },
-      {
-        id: 2,
-        produtoNome: "Arroz",
-        isCompleted: false,
-      },
-    ],
-  });
+  const [lista, setLista] = useState([]);
 
   function submitProduto(nome) {
     const newProduct = {
@@ -33,22 +14,46 @@ function NovaLista() {
       isCompleted: false,
     };
 
-    return setLista({ ...lista, produtos: [...lista.produtos, newProduct] });
+    setLista([...lista, newProduct]);
+  }
+
+  function submitNovaLista(nome, produtosLista) {
+    // const newList = {
+    //   id: v4(),
+    //   nomeLista: nome,
+    //   produtos: [{}],
+    // };
+    console.log(
+      `O nome da lista é: ${nome} e os produtos dela são: \n${produtosLista}`,
+    );
   }
 
   function deleteProduto(id) {
-    const newList = lista.produtos.filter((produto) => produto.id !== id);
+    const newList = lista.filter((produto) => produto.id !== id);
 
-    return setLista({ ...lista, produtos: newList });
+    console.log(newList);
+    setLista(newList);
   }
 
-  return (
-    <div>
-      <h1>Nova lista de compras</h1>
-      <AddProduto submitProduto={submitProduto} />
-      <Lista lista={lista} deleteProduto={deleteProduto} />
-    </div>
-  );
+  if (!lista || lista.length === 0) {
+    return (
+      <div className="w-150 mx-auto">
+        <h1 className="text-center p-4 text-2xl">Nova lista de compras</h1>
+        <AddLista submitNovaLista={submitNovaLista} produtosLista={lista} />
+        <AddProduto submitProduto={submitProduto} />
+        <h1>Lista Vazia</h1>
+      </div>
+    );
+  } else {
+    return (
+      <div className="w-150 mx-auto">
+        <h1 className="text-center p-4 text-2xl">Nova lista de compras</h1>
+        <AddLista submitNovaLista={submitNovaLista} produtosLista={lista} />
+        <AddProduto submitProduto={submitProduto} />
+        <Lista lista={lista} deleteProduto={deleteProduto} />
+      </div>
+    );
+  }
 }
 
 export default NovaLista;

@@ -3,7 +3,7 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Lista from "./pages/Lista.jsx";
+import ListaDetalhada from "./pages/ListaDetalhada.jsx";
 import VerListas from "./pages/VerListas.jsx";
 import NovaLista from "./pages/NovaLista.jsx";
 
@@ -17,8 +17,8 @@ const router = createBrowserRouter([
     element: <VerListas />,
   },
   {
-    path: "/Lista",
-    element: <Lista />,
+    path: "/ListaDetalhada",
+    element: <ListaDetalhada />,
   },
   {
     path: "/NovaLista",
