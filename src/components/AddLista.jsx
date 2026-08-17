@@ -15,6 +15,9 @@ function AddLista({ submitNovaLista, produtosLista }) {
       <button
         onClick={() => {
           if (!novaLista.trim()) return alert("Preencha o nome da lista!");
+          if (produtosLista.length === 0)
+            return alert("Adicione pelo menos um produto à lista!");
+
           submitNovaLista(novaLista, produtosLista);
           setNovaLista("");
         }}

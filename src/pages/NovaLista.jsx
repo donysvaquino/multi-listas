@@ -18,14 +18,16 @@ function NovaLista() {
   }
 
   function submitNovaLista(nome, produtosLista) {
-    // const newList = {
-    //   id: v4(),
-    //   nomeLista: nome,
-    //   produtos: [{}],
-    // };
-    console.log(
-      `O nome da lista é: ${nome} e os produtos dela são: \n${produtosLista}`,
-    );
+    const newList = {
+      id: v4(),
+      nomeLista: nome,
+      produtos: produtosLista,
+    };
+
+    setLista([]);
+    console.log(lista);
+
+    return localStorage.setItem(`Lista${newList.id}`, JSON.stringify(newList));
   }
 
   function deleteProduto(id) {
