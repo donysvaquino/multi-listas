@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import ListaDetalhada from "./pages/ListaDetalhada.jsx";
 import VerListas from "./pages/VerListas.jsx";
 import NovaLista from "./pages/NovaLista.jsx";
+import { useParams } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +18,7 @@ const router = createBrowserRouter([
     element: <VerListas />,
   },
   {
-    path: "/ListaDetalhada",
+    path: "/ListaDetalhada/:listaId",
     element: <ListaDetalhada />,
   },
   {
