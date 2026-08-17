@@ -1,5 +1,8 @@
 function VerListas() {
-  return <h1>Aqui voce ve as listas</h1>;
+  return (
+    <h1>Veja as suas listas cadastradas:</h1>
+    
+  );
 }
 
 export default VerListas;

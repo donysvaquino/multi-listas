@@ -16,3 +16,21 @@ Botão de Criar Lista, salva a lista, limpa inputs e exibe mensagem de sucesso
 Ver listas:
 
 Uma lista com o nome de cada lista e um botão do lado pra ver ela e outro de excluir, ao clicar pra ver, redirecionar pra /lista/:id da lista
+
+
+
+PRA FAZER AMANHÃ 17/08
+
+MUDAR O ESQUEMA DE SALVAMENTO DAS TABELAS >>>>>> EM VEZ DE SALVAR VÁRIAS TABELAS DIFERENTES NO LOCALSTORAGE, SALVAR APENAS UMA TABELA QUE TERÁ O NOME DAS LISTAS E OS DADOS DELAS DENTRO DELA! EX:
+
+listas: {
+    lista1: {
+        nomeLista:"Lista 1",
+        produtos: [{}, {}, {}]
+    },
+    lista2: {
+        nomeLista:"Lista 2",
+        produtos: [{}, {}, {}]
+    }
+}
+

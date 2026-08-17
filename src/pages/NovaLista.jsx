@@ -27,7 +27,13 @@ function NovaLista() {
     setLista([]);
     console.log(lista);
 
-    return localStorage.setItem(`Lista${newList.id}`, JSON.stringify(newList));
+    if (!localStorage.getItem("Listas")) {
+      localStorage.setItem("Listas", JSON.stringify([newList]));
+    } else {
+      const updateList = JSON.parse(localStorage.getItem("Listas"));
+      updateList.push(newList);
+      localStorage.setItem("Listas", JSON.stringify(updateList));
+    }
   }
 
   function deleteProduto(id) {
