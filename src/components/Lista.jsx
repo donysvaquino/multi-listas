@@ -7,12 +7,12 @@ function Lista({ lista, deleteProduto }) {
         {lista.map((produto) => (
           <li
             key={produto.id}
-            className="flex content-between bg-slate-400 w-full text-left text-white p-2 rounded-m2"
+            className="flex justify-between items-center bg-slate-400 w-full text-left text-white p-2 rounded-md"
           >
             {produto.produtoNome}
             <button
               onClick={() => deleteProduto(produto.id)}
-              className="bg-slate-400 p2 rounded-md text-white"
+              className="bg-slate-400 p-2 rounded-md text-white"
             >
               <TrashIcon />
             </button>
