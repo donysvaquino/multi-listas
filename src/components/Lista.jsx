@@ -2,25 +2,27 @@ import { TrashIcon } from "lucide-react";
 
 function Lista({ lista, deleteProduto }) {
   return (
-    <div className="my-5">
-      <ul className="space-y-4 p-6 bg-slate-200 rounded-md shadow">
-        {lista.map((produto) => (
-          <li
-            key={produto.id}
-            className="flex justify-between items-center bg-slate-400 w-full text-left text-white p-2 rounded-md"
-          >
+    <ul className="space-y-2">
+      {lista.map((produto) => (
+        <li
+          key={produto.id}
+          className="flex justify-between items-center bg-zinc-50 border border-zinc-100 w-full p-3 rounded-xl hover:bg-zinc-100/30 transition-colors"
+        >
+          <span className="text-sm font-medium text-zinc-800 px-1">
             {produto.produtoNome}
-            <button
-              onClick={() => deleteProduto(produto.id)}
-              className="bg-slate-400 p-2 rounded-md text-white"
-            >
-              <TrashIcon />
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
+          </span>
+          <button
+            onClick={() => deleteProduto(produto.id)}
+            className="p-1.5 text-zinc-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors cursor-pointer"
+            title="Excluir item"
+          >
+            <TrashIcon className="w-4 h-4" />
+          </button>
+        </li>
+      ))}
+    </ul>
   );
 }
 
 export default Lista;
+
