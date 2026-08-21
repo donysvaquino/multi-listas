@@ -1,16 +1,61 @@
-# React + Vite
+# Multi Listas
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O **Multi Listas** é uma aplicação web para criar e organizar múltiplas listas de compras de forma simples. Cada lista pode reunir diversos produtos, permitindo acompanhar os itens que já foram comprados e manter diferentes compras separadas.
 
-Currently, two official plugins are available:
+O projeto foi desenvolvido para praticar conceitos de React, como componentização, gerenciamento de estado, rotas e persistência de dados no navegador.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Funcionalidades
 
-## React Compiler
+- Criar listas de compras personalizadas
+- Adicionar e remover produtos
+- Visualizar todas as listas cadastradas
+- Acessar os detalhes de uma lista
+- Marcar e desmarcar produtos como comprados
+- Excluir listas completas
+- Salvar os dados no `localStorage`
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tecnologias utilizadas
 
-## Expanding the ESLint configuration
+- React
+- Vite
+- React Router
+- Tailwind CSS
+- Lucide React
+- UUID
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Como executar
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/donysvaquino/multi-listas.git
+```
+
+Entre na pasta do projeto e instale as dependências:
+
+```bash
+cd multi-listas
+npm install
+```
+
+Inicie o servidor de desenvolvimento:
+
+```bash
+npm run dev
+```
+
+Depois, acesse o endereço exibido pelo Vite no terminal.
+
+## Armazenamento dos dados
+
+As listas são armazenadas no `localStorage` do navegador. Isso permite que os dados continuem disponíveis após atualizar ou fechar a página, sem a necessidade de um servidor ou banco de dados.
+
+> Como o armazenamento é local, as listas ficam disponíveis somente no navegador e dispositivo em que foram criadas.
+
+## Status
+
+Projeto em desenvolvimento.
+
+## Autor
+
+Desenvolvido por [Dony Silva](https://github.com/donysvaquino).
